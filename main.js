@@ -20,6 +20,7 @@ async function timeout() {
     const minDelay = parseInt(process.env.MIN, 10); // Parse the MIN environment variable as an integer
     const delayTime = Math.floor(Math.random() * (maxDelay * 60000 - minDelay * 60000 + 1) + minDelay * 60000);
     console.log(`Waiting for ${delayTime / 60000} minutes...`);
+    await new Promise(resolve => setTimeout(resolve, delayTime));
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////// MAIN FUNC
 async function send() {
